@@ -134,6 +134,16 @@ const copy = {
       },
       {
         meta: "2023 - 2024 · Shanghai",
+        title: "捏Ta · Anime Image Generation Product",
+        link: "https://app.nieta.art/",
+        logo: "/logos/nieta.ico",
+        points: [
+          "Built a customized anime-style image generation workflow integrating Stable Diffusion and LoRA models, achieving controllable personalization for end users.",
+          "Translated image-generation capability into a consumer product flow: style presets, controllable identity preference, prompt workflows, and repeatable asset output.",
+        ],
+      },
+      {
+        meta: "2023 - 2024 · Shanghai",
         title: "SenseTime · LLM Application / Agent Intern",
         points: [
           "Explored how LLM applications enter enterprise workflows through knowledge, tool calling, task automation, and internal productivity systems.",
@@ -142,13 +152,47 @@ const copy = {
     ],
     systems: [
       {
-        name: "Atypica.AI",
+        name: "Atypica.ai",
         title: "Consumer Research Agent Platform",
         meta: "Next.js / AI SDK / Prisma / PostgreSQL",
         link: "https://atypica.ai/",
+        logo: "/logos/atypica.jpg",
         points: [
           "Commercial value: compress consumer research from a service-heavy process into an AI-assisted product workflow for brands and innovation teams.",
           "Agent technique: planning, interview/discussion simulation, social observation, persona retrieval, long-running tasks, memory, skills, and report generation.",
+        ],
+      },
+      {
+        name: "Faishion.ai",
+        title: "Fashion Agent & Generation Task System",
+        meta: "AI SDK / R2 / Inngest / Evaluation",
+        link: "https://faishion.ai/",
+        logo: "/logos/faishion.ico",
+        points: [
+          "Commercial value: connect chat, products, styling, and image-generation tasks into a consumer-facing fashion workflow.",
+          "Agent technique: streaming chat, product-search tools, natural-language actions, task queues, image assets, human scoring, reruns, and alerts.",
+        ],
+      },
+      {
+        name: "PitchLab.pro",
+        title: "Voice-based AI Sales Training",
+        meta: "Multi-Agent / Speech / Feedback",
+        link: "https://pitchlab.pro/",
+        logo: "/logos/pitchlab.png",
+        points: [
+          "Commercial value: lower the cost of sales training and make excellent sales behavior repeatable across teams.",
+          "Agent technique: customer role-play, speech interaction, expression evaluation, realism checks, and personalized coaching feedback.",
+        ],
+      },
+      {
+        name: "捏Ta",
+        title: "Anime-style Image Generation Workflow",
+        meta: "Stable Diffusion / LoRA / Personalization",
+        link: "https://app.nieta.art/",
+        logo: "/logos/nieta.ico",
+        points: [
+          "Commercial value: turn personalized anime-style generation into an end-user product instead of a raw model demo.",
+          "Generation technique: customized Stable Diffusion and LoRA workflow, controllable personalization, style presets, and repeatable character image output.",
         ],
       },
       {
@@ -158,25 +202,6 @@ const copy = {
         points: [
           "Commercial value: make a luxury campaign shoppable through conversational search, styling guidance, and full-look recommendations without exposing brand data here.",
           "Agent technique: structured intent parsing, catalog grounding, hybrid retrieval, ranking, recommendation assembly, and quality evaluation.",
-        ],
-      },
-      {
-        name: "Faishion",
-        title: "Fashion Agent & Generation Task System",
-        meta: "AI SDK / R2 / Inngest / Evaluation",
-        points: [
-          "Commercial value: connect chat, products, styling, and image-generation tasks into a consumer-facing fashion workflow.",
-          "Agent technique: streaming chat, product-search tools, natural-language actions, task queues, image assets, human scoring, reruns, and alerts.",
-        ],
-      },
-      {
-        name: "PitchLab",
-        title: "Voice-based AI Sales Training",
-        meta: "Multi-Agent / Speech / Feedback",
-        link: "https://pitchlab.pro/",
-        points: [
-          "Commercial value: lower the cost of sales training and make excellent sales behavior repeatable across teams.",
-          "Agent technique: customer role-play, speech interaction, expression evaluation, realism checks, and personalized coaching feedback.",
         ],
       },
       {
@@ -268,19 +293,63 @@ const copy = {
       },
       {
         meta: "2023 - 2024 · 上海",
+        title: "捏Ta · 动漫风格图像生成产品",
+        link: "https://app.nieta.art/",
+        logo: "/logos/nieta.ico",
+        points: [
+          "Built a customized anime-style image generation workflow integrating Stable Diffusion and LoRA models, achieving controllable personalization for end users.",
+          "把图像生成能力产品化为消费者可使用的流程：风格预设、身份偏好控制、prompt 工作流和稳定的图片资产输出。",
+        ],
+      },
+      {
+        meta: "2023 - 2024 · 上海",
         title: "SenseTime 商汤科技 · LLM Application / Agent Intern",
         points: ["探索 LLM 如何进入企业知识、工具调用、任务自动化和内部效率系统。"],
       },
     ],
     systems: [
       {
-        name: "Atypica.AI",
+        name: "Atypica.ai",
         title: "消费者研究 Agent 平台",
         meta: "Next.js / AI SDK / Prisma / PostgreSQL",
         link: "https://atypica.ai/",
+        logo: "/logos/atypica.jpg",
         points: [
           "商业价值：把高度依赖咨询服务的消费者研究，压缩成品牌和创新团队可反复使用的 AI 产品工作流。",
           "Agent 技术：规划、访谈/群体讨论模拟、社媒观察、Persona 检索、长任务、Memory、Skills 和报告生成。",
+        ],
+      },
+      {
+        name: "Faishion.ai",
+        title: "时尚 Agent 与生成任务系统",
+        meta: "AI SDK / R2 / Inngest / Evaluation",
+        link: "https://faishion.ai/",
+        logo: "/logos/faishion.ico",
+        points: [
+          "商业价值：把聊天、商品、搭配、图像生成任务连成面向消费者的时尚体验链路。",
+          "Agent 技术：streaming chat、商品搜索工具、自然语言动作、任务队列、图片资产、人类评分、复跑和告警。",
+        ],
+      },
+      {
+        name: "PitchLab.pro",
+        title: "基于语音的 AI 销售训练",
+        meta: "Multi-Agent / Speech / Feedback",
+        link: "https://pitchlab.pro/",
+        logo: "/logos/pitchlab.png",
+        points: [
+          "商业价值：降低销售训练成本，把优秀销售经验复制给更多一线人员。",
+          "Agent 技术：客户角色扮演、语音交互、表达评估、真实度判断和个性化反馈。",
+        ],
+      },
+      {
+        name: "捏Ta",
+        title: "动漫风格图像生成工作流",
+        meta: "Stable Diffusion / LoRA / Personalization",
+        link: "https://app.nieta.art/",
+        logo: "/logos/nieta.ico",
+        points: [
+          "商业价值：把个性化动漫风格生成做成终端用户可使用的产品，而不只是模型 demo。",
+          "生成技术：定制化 Stable Diffusion 与 LoRA 工作流、可控个性化、风格预设和可复现的角色图片输出。",
         ],
       },
       {
@@ -290,25 +359,6 @@ const copy = {
         points: [
           "商业价值：通过对话式搜索、造型建议和 full-look 推荐，让活动商品更容易被发现、理解和购买。",
           "Agent 技术：结构化意图解析、catalog grounding、混合检索、排序、搭配组装和质量评测。",
-        ],
-      },
-      {
-        name: "Faishion",
-        title: "时尚 Agent 与生成任务系统",
-        meta: "AI SDK / R2 / Inngest / Evaluation",
-        points: [
-          "商业价值：把聊天、商品、搭配、图像生成任务连成面向消费者的时尚体验链路。",
-          "Agent 技术：streaming chat、商品搜索工具、自然语言动作、任务队列、图片资产、人类评分、复跑和告警。",
-        ],
-      },
-      {
-        name: "PitchLab",
-        title: "基于语音的 AI 销售训练",
-        meta: "Multi-Agent / Speech / Feedback",
-        link: "https://pitchlab.pro/",
-        points: [
-          "商业价值：降低销售训练成本，把优秀销售经验复制给更多一线人员。",
-          "Agent 技术：客户角色扮演、语音交互、表达评估、真实度判断和个性化反馈。",
         ],
       },
       {
@@ -505,42 +555,65 @@ export default function Home() {
       <section className="section intro reveal" id="work">
         <div className="sectionLabel">{t.sections.work}</div>
         <div className="timeline">
-          {t.work.map((item) => (
-            <article className="entry" key={item.title}>
-              <div className="entryMeta">{item.meta}</div>
-              <h2>{item.title}</h2>
-              <ul>
-                {item.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+          {t.work.map((item) => {
+            const hasBrandLink = "link" in item && item.link && "logo" in item && item.logo;
+
+            return (
+              <article className="entry" key={item.title}>
+                <div className="entryMeta">{item.meta}</div>
+                <div className="entryHead">
+                  <h2>{item.title}</h2>
+                  {hasBrandLink ? (
+                    <a className="entryBrand" href={item.link} target="_blank" rel="noopener noreferrer">
+                      <img src={item.logo} alt={`${item.title} logo`} />
+                      <span>{locale === "en" ? "Open" : "打开"}</span>
+                    </a>
+                  ) : null}
+                </div>
+                <ul>
+                  {item.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
         </div>
       </section>
 
-      <section className="section projects" id="systems">
+      <section className="section projects reveal" id="systems">
         <div className="sectionLabel">{t.sections.systems}</div>
         <div className="projectGrid">
-          {t.systems.map((project, index) => (
-            <article className="project reveal" key={project.name} style={{ transitionDelay: `${index * 55}ms` }}>
-              <div className="projectTop">
-                <span>{project.name}</span>
-                <span>{project.meta}</span>
-              </div>
-              <h2>{project.title}</h2>
-              <ul>
-                {project.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              {"link" in project && project.link ? (
-                <a className="projectLink" href={project.link} target="_blank" rel="noopener noreferrer">
-                  {locale === "en" ? "Open link" : "打开链接"}
-                </a>
-              ) : null}
-            </article>
-          ))}
+          {t.systems.map((project, index) => {
+            const hasBrandLink = "link" in project && project.link && "logo" in project && project.logo;
+
+            return (
+              <article className="project" key={project.name} style={{ transitionDelay: `${index * 55}ms` }}>
+                <div className="projectTop">
+                  {hasBrandLink ? (
+                    <a className="projectBrand" href={project.link} target="_blank" rel="noopener noreferrer">
+                      <img src={project.logo} alt={`${project.name} logo`} />
+                      <span>{project.name}</span>
+                    </a>
+                  ) : (
+                    <span className="projectName">{project.name}</span>
+                  )}
+                  <span className="projectMetaText">{project.meta}</span>
+                </div>
+                <h2>{project.title}</h2>
+                <ul>
+                  {project.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+                {"link" in project && project.link ? (
+                  <a className="projectLink" href={project.link} target="_blank" rel="noopener noreferrer">
+                    {locale === "en" ? "Open link" : "打开链接"}
+                  </a>
+                ) : null}
+              </article>
+            );
+          })}
         </div>
       </section>
 
