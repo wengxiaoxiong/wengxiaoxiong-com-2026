@@ -4,6 +4,105 @@ import { useEffect, useMemo, useState } from "react";
 
 type Locale = "en" | "zh";
 
+const biliVideos = [
+  {
+    image: "/bilibili-covers/nanobot-context-memory.jpg",
+    href: "https://www.bilibili.com/video/BV1W2RNBZEht/",
+    title: {
+      en: "NanoBot EP3: Context Engineering and Memory",
+      zh: "NanoBot EP3：上下文工程和记忆机制",
+    },
+  },
+  {
+    image: "/bilibili-covers/nanobot-agent-loop.jpg",
+    href: "https://www.bilibili.com/video/BV1rS9hBZEVo/",
+    title: {
+      en: "NanoBot EP2: Agent Loop and Task Closure",
+      zh: "NanoBot EP2：AgentLoop 任务闭环",
+    },
+  },
+  {
+    image: "/bilibili-covers/nanobot-clawdbot.jpg",
+    href: "https://www.bilibili.com/video/BV1SLZiBcEM2/",
+    title: {
+      en: "NanoBot EP1: An Agent That Wakes Up to Work",
+      zh: "NanoBot EP1：会自己醒来干活的 Agent",
+    },
+  },
+  {
+    image: "/bilibili-covers/codex-v0-product.jpg",
+    href: "https://www.bilibili.com/video/BV1NXn4zsEo6/",
+    title: {
+      en: "V0 + Codex: Ship a Product Without Manual Coding",
+      zh: "V0 + Codex：快速落地产品和网页",
+    },
+  },
+  {
+    image: "/bilibili-covers/vercel-nextjs-deploy.jpg",
+    href: "https://www.bilibili.com/video/BV1xW8mzTETn/",
+    title: {
+      en: "Deploy a Next.js Full-stack Project on Vercel",
+      zh: "用 Vercel 部署 Next.js 全栈项目",
+    },
+  },
+  {
+    image: "/bilibili-covers/vercel-blob.jpg",
+    href: "https://www.bilibili.com/video/BV1Vm8mzDE9q/",
+    title: {
+      en: "Vercel Blob for Global Product File Storage",
+      zh: "Vercel Blob：出海项目文件存储",
+    },
+  },
+  {
+    image: "/bilibili-covers/redis-rate-limit.jpg",
+    href: "https://www.bilibili.com/video/BV1BH4y1g7ad/",
+    title: {
+      en: "Redis Rate Limiting: Token Bucket and Sliding Window",
+      zh: "Redis 分布式限流算法动画解析",
+    },
+  },
+  {
+    image: "/bilibili-covers/redis-cache-consistency.jpg",
+    href: "https://www.bilibili.com/video/BV1Qr421E7wp/",
+    title: {
+      en: "Redis Cache Consistency in Real Systems",
+      zh: "Redis 缓存一致性问题",
+    },
+  },
+  {
+    image: "/bilibili-covers/redis-cache-problems.jpg",
+    href: "https://www.bilibili.com/video/BV16Z4217772/",
+    title: {
+      en: "Redis Cache Breakdown, Penetration and Avalanche",
+      zh: "Redis 缓存击穿、穿透、雪崩",
+    },
+  },
+  {
+    image: "/bilibili-covers/redis-redlock.jpg",
+    href: "https://www.bilibili.com/video/BV1em41127KW/",
+    title: {
+      en: "Redis Redlock and Distributed Failure Cases",
+      zh: "Redis 红锁与分布式故障场景",
+    },
+  },
+  {
+    image: "/bilibili-covers/redis-global-id.jpg",
+    href: "https://www.bilibili.com/video/BV1xm42177Fq/",
+    title: {
+      en: "Redis for Global IDs, Views and Sessions",
+      zh: "Redis 全局 ID、浏览数和值缓存",
+    },
+  },
+  {
+    image: "/bilibili-covers/redis-distributed-lock.jpg",
+    href: "https://www.bilibili.com/video/BV1Yz421r74Z/",
+    title: {
+      en: "Redis Distributed Locks with Lua and Renewal",
+      zh: "Redis 分布式锁、Lua 与锁续期",
+    },
+  },
+];
+
 const copy = {
   en: {
     nav: ["Work", "Systems", "Thinking", "Contact"],
@@ -123,9 +222,10 @@ const copy = {
     ],
     content: {
       title: "熊老板i · Bilibili",
-      stats: "10k+ followers",
+      stats: "10k+ followers · Redis systems + Agent engineering",
       body:
-        "A technical channel focused on hard engineering topics. Earlier content explained Redis internals, engineering systems, and later AI Agent principles. The channel is also a proof of work: complex systems can be explained, produced, and distributed as repeatable content workflows.",
+        "A technical media asset built around serious engineering storytelling: Redis internals, distributed systems, AI Agent principles, and product-building workflows. It proves more than audience reach: I can package complex systems into narratives that build trust, educate developers, and create distribution for technical products.",
+      cta: "Open Bilibili",
     },
     stack: [
       ["Agent", "AI SDK, tool calling, structured output, Zod, Plan/Execute, Skills, MCP, context engineering"],
@@ -250,9 +350,10 @@ const copy = {
     ],
     content: {
       title: "熊老板i · Bilibili",
-      stats: "1万+粉丝",
+      stats: "1万+粉丝 · Redis 系统设计 + Agent 工程",
       body:
-        "高难度技术内容频道，早期重点讲 Redis 源码、工程系统设计，后来延伸到 AI Agent 原理。这个账号也是 Proof of Work：复杂系统不仅要能做出来，也要能讲清楚、规模化生产和分发。",
+        "一个围绕硬核工程叙事建立起来的技术媒体资产：Redis 源码与分布式系统、AI Agent 原理、产品落地工作流。它不只是粉丝数证明，也证明我能把复杂系统包装成可信、可传播、能服务技术产品增长的内容。",
+      cta: "打开 Bilibili",
     },
     stack: [
       ["Agent", "AI SDK, tool calling, structured output, Zod, Plan/Execute, Skills, MCP, context engineering"],
@@ -269,6 +370,63 @@ const copy = {
 
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("en");
+
+  useEffect(() => {
+    const root = document.documentElement;
+    let frame = 0;
+
+    function updateScroll() {
+      frame = 0;
+      const maxScroll = Math.max(document.body.scrollHeight - window.innerHeight, 1);
+      const progress = Math.min(window.scrollY / maxScroll, 1);
+      root.style.setProperty("--scroll-progress", `${progress * 100}%`);
+      root.style.setProperty("--scroll-shift", `${Math.min(window.scrollY * 0.1, 110)}px`);
+      root.style.setProperty("--scroll-float", `${Math.min(window.scrollY * 0.045, 54)}px`);
+    }
+
+    function onScroll() {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateScroll);
+    }
+
+    updateScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+    root.classList.add("motion-ready");
+
+    if (!("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return () => root.classList.remove("motion-ready");
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.16 },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    return () => {
+      observer.disconnect();
+      root.classList.remove("motion-ready");
+    };
+  }, []);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("locale") as Locale | null;
@@ -302,6 +460,13 @@ export default function Home() {
 
   return (
     <main>
+      <div className="scrollProgress" aria-hidden="true" />
+      <div className="scrollRail" aria-hidden="true">
+        <span>BUILD</span>
+        <span>SHIP</span>
+        <span>PROVE</span>
+      </div>
+
       <section className="hero" aria-label={t.name}>
         <div className="scanline" />
         <nav className="nav" aria-label="Primary">
@@ -337,7 +502,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section intro" id="work">
+      <section className="section intro reveal" id="work">
         <div className="sectionLabel">{t.sections.work}</div>
         <div className="timeline">
           {t.work.map((item) => (
@@ -357,8 +522,8 @@ export default function Home() {
       <section className="section projects" id="systems">
         <div className="sectionLabel">{t.sections.systems}</div>
         <div className="projectGrid">
-          {t.systems.map((project) => (
-            <article className="project" key={project.name}>
+          {t.systems.map((project, index) => (
+            <article className="project reveal" key={project.name} style={{ transitionDelay: `${index * 55}ms` }}>
               <div className="projectTop">
                 <span>{project.name}</span>
                 <span>{project.meta}</span>
@@ -382,8 +547,8 @@ export default function Home() {
       <section className="section thinking" id="thinking">
         <div className="sectionLabel">{t.sections.thinking}</div>
         <div className="thinkingGrid">
-          {t.thinking.map((item) => (
-            <article className="thinkingCard" key={item.label}>
+          {t.thinking.map((item, index) => (
+            <article className="thinkingCard reveal" key={item.label} style={{ transitionDelay: `${index * 70}ms` }}>
               <h2>{item.label}</h2>
               <p>{item.body}</p>
             </article>
@@ -391,21 +556,44 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section contentProof">
+      <section className="section contentProof reveal">
         <div className="sectionLabel">{t.sections.content}</div>
-        <div className="mediaPanel">
-          <div>
+        <div className="biliShowcase">
+          <div className="biliIntro">
             <p className="entryMeta">{t.content.stats}</p>
             <h2>{t.content.title}</h2>
             <p>{t.content.body}</p>
+            <a className="biliButton" href="https://space.bilibili.com/25484432" target="_blank" rel="noopener noreferrer">
+              {t.content.cta}
+            </a>
           </div>
-          <a href="https://space.bilibili.com/25484432" target="_blank" rel="noopener noreferrer">
-            BILIBILI
-          </a>
+
+          <div className="coverStage" aria-label="Selected Bilibili video covers">
+            <a className="featureCover" href={biliVideos[0].href} target="_blank" rel="noopener noreferrer">
+              <img src={biliVideos[0].image} alt={biliVideos[0].title[locale]} />
+              <span>{biliVideos[0].title[locale]}</span>
+            </a>
+            <div className="coverStack">
+              {biliVideos.slice(1, 5).map((video) => (
+                <a className="miniCover" href={video.href} key={video.image} target="_blank" rel="noopener noreferrer">
+                  <img src={video.image} alt={video.title[locale]} />
+                  <span>{video.title[locale]}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="coverMarquee" aria-hidden="true">
+            <div className="coverTrack">
+              {[...biliVideos, ...biliVideos].map((video, index) => (
+                <img src={video.image} alt="" key={`${video.image}-${index}`} />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section skills" aria-label="Stack">
+      <section className="section skills reveal" aria-label="Stack">
         <div className="sectionLabel">{t.sections.stack}</div>
         <div className="skillList">
           {t.stack.map(([label, value]) => (
@@ -417,7 +605,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contactSection" id="contact">
+      <section className="contactSection reveal" id="contact">
         <div>
           <p className="eyebrow">{t.sections.contact}</p>
           <h2>{t.contact.title}</h2>
