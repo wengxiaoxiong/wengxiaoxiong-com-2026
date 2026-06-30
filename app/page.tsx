@@ -103,21 +103,28 @@ const biliVideos = [
   },
 ];
 
+const friendLinks = [
+  { href: "https://joyehuang.me/", label: "joyehuang.me" },
+  { href: "https://justarchi-design.com/", label: "justarchi-design.com" },
+  { href: "https://soukyo-rent-a-car.com/", label: "soukyo-rent-a-car.com" },
+];
+
 const copy = {
   en: {
-    nav: ["Bilibili", "Apps", "Work", "Stack", "Contact"],
+    nav: ["Bilibili", "Apps", "Articles", "Work", "Stack", "Contact"],
     switchLabel: "中文",
     heroKicker: "AI Native Agent Systems Builder / Backend Engineer",
     name: "Weng Xiaoxiong",
     hero:
       "I turn ambiguous business opportunities into agentic systems: research, content, recruiting, product innovation, development, operations, and growth workflows that can run, learn, and compound.",
     ctas: ["Email", "GitHub", "Bilibili"],
-    ticker: ["Business", "Product", "Architecture", "Agent Runtime", "Retrieval", "Evaluation"],
+    ticker: ["Business", "Product", "Architecture", "Agent Runtime", "Loop Engineering", "Evaluation"],
     sections: {
       content: "01 / Audience & Proof",
       systems: "02 / Apps",
-      work: "03 / Work Experience",
-      stack: "04 / Agent Stack",
+      articles: "03 / Technical Writing",
+      work: "04 / Work Experience",
+      stack: "05 / Agent Stack",
       contact: "Contact",
     },
     work: [
@@ -129,7 +136,7 @@ const copy = {
         points: [
           "Turn enterprise research, product innovation, and content workflows into Agent systems that can plan, execute, evaluate, and deliver business outputs.",
           "Built Atypica.AI Research Agent around a repeatable commercial workflow: clarify market questions, simulate consumers, gather signals, and produce decision-ready reports.",
-          "Designed Agent runtime patterns such as Plan Mode, tool gating, messages-as-source-of-truth, skills, memory, retrieval, and evaluation loops.",
+          "Designed Agent runtime patterns such as tool gating, messages-as-source-of-truth, skills, memory, evaluation, and Loop Engineering.",
           "Worked across product surface, backend architecture, AI workflow design, and delivery quality so Agent prototypes could become usable systems.",
         ],
       },
@@ -162,7 +169,7 @@ const copy = {
         logo: "/logos/atypica.jpg",
         points: [
           "Commercial value: compress consumer research from a service-heavy process into an AI-assisted product workflow for brands and innovation teams.",
-          "Agent technique: planning, interview/discussion simulation, social observation, persona retrieval, long-running tasks, memory, skills, and report generation.",
+          "Agent technique: planning, interview/discussion simulation, social observation, persona memory matching, long-running tasks, skills, and report generation.",
         ],
       },
       {
@@ -193,7 +200,7 @@ const copy = {
         meta: "PostgreSQL / pgvector / JSONB / Prisma",
         points: [
           "Commercial value: make a luxury campaign shoppable through conversational search, styling guidance, and full-look recommendations without exposing brand data here.",
-          "Agent technique: structured intent parsing, catalog grounding, hybrid retrieval, ranking, recommendation assembly, and quality evaluation.",
+          "Agent technique: structured intent parsing, catalog grounding, ranking, recommendation assembly, and quality evaluation.",
         ],
       },
       {
@@ -214,31 +221,44 @@ const copy = {
         "A technical media asset built around serious engineering storytelling: Redis internals, distributed systems, AI Agent principles, and product-building workflows. It proves more than audience reach: I can package complex systems into narratives that build trust, educate developers, and create distribution for technical products.",
       cta: "Open Bilibili",
     },
+    articles: [
+      {
+        title: "How to Design Prompt Cache for Long-Context Agents: A Real Atypica.AI Experiment",
+        meta: "Atypica.ai Engineering",
+        href: "https://atypica.ai/blog/how-to-design-prompt-cache-for-long-context-agents",
+        body:
+          "A real production experiment on prompt caching for long-context research agents: token-threshold checkpoints, offline simulation, provider cache metadata, and cost observability.",
+      },
+    ],
     stack: [
-      ["Agent", "AI SDK, tool calling, structured output, Zod, Plan/Execute, Skills, MCP, context engineering"],
-      ["Backend", "Node.js, Next.js App Router, Route Handler, Prisma, PostgreSQL, Redis, Stripe, raw SQL"],
-      ["Retrieval", "pgvector, HNSW, tsvector, JSONB containment, embedding, semantic hybrid rerank, facet parser"],
+      ["Daily Tools", "ClaudeCode, Cursor, Codex, Openclaw, Hermes"],
+      ["Agent", "AI SDK, tool calling, Skills, MCP, context engineering, memory, evaluation loops, Loop Engineering"],
+      ["Backend", "Node.js, Java, Python, Next.js App Router, Route Handler, Prisma, PostgreSQL, Redis, Stripe, raw SQL"],
+      ["Frontend", "React, Next.js, TypeScript, responsive UI, pixel systems, interaction design"],
+      ["Animation", "Remotion, Hyperframe, CSS motion, scroll interactions, 3D tilt"],
       ["Quality", "Vitest, Playwright, evaluation harness, API batch tests, LLM judge, health checks"],
     ],
     contact: {
       title: "Build with me.",
       body: "Shanghai / Taipei · WeChat: wengxiaoxiong-com",
+      friends: "Friends",
     },
   },
   zh: {
-    nav: ["Bilibili", "Apps", "工作", "技术栈", "联系"],
+    nav: ["Bilibili", "Apps", "文章", "工作", "技术栈", "联系"],
     switchLabel: "EN",
     heroKicker: "AI Native Agent Systems Builder / Backend Engineer",
     name: "翁小雄",
     hero:
       "我擅长把模糊的商业机会抽象成可自动运行的 AI 系统：调研、内容、招聘、产品创新、开发、运营和增长，都可以变成 Agent 可调度、可评测、可复利的工作流。",
     ctas: ["邮件", "GitHub", "Bilibili"],
-    ticker: ["商业", "产品", "架构", "Agent Runtime", "检索", "评测"],
+    ticker: ["商业", "产品", "架构", "Agent Runtime", "Loop Engineering", "评测"],
     sections: {
       content: "01 / 受众与影响力",
       systems: "02 / Apps",
-      work: "03 / 工作经历",
-      stack: "04 / 技术栈",
+      articles: "03 / 技术文章",
+      work: "04 / 工作经历",
+      stack: "05 / 技术栈",
       contact: "联系",
     },
     work: [
@@ -250,7 +270,7 @@ const copy = {
         points: [
           "把企业调研、产品创新和内容工作流改造成可规划、可执行、可评测、可交付的 Agent 系统。",
           "围绕 Atypica.AI Research Agent 建立可复用商业流程：澄清市场问题、模拟消费者、收集信号、输出可决策报告。",
-          "设计 Plan Mode、工具门控、messages-as-source-of-truth、Skills、Memory、Retrieval、Evaluation 等 Agent runtime 模式。",
+          "设计工具门控、messages-as-source-of-truth、Skills、Memory、Evaluation 和 Loop Engineering 等 Agent runtime 模式。",
           "横跨产品界面、后端架构、AI 工作流设计和交付质量，把 Agent 原型推进成真实可用的业务系统。",
         ],
       },
@@ -281,7 +301,7 @@ const copy = {
         logo: "/logos/atypica.jpg",
         points: [
           "商业价值：把高度依赖咨询服务的消费者研究，压缩成品牌和创新团队可反复使用的 AI 产品工作流。",
-          "Agent 技术：规划、访谈/群体讨论模拟、社媒观察、Persona 检索、长任务、Memory、Skills 和报告生成。",
+          "Agent 技术：规划、访谈/群体讨论模拟、社媒观察、Persona memory matching、长任务、Skills 和报告生成。",
         ],
       },
       {
@@ -312,7 +332,7 @@ const copy = {
         meta: "PostgreSQL / pgvector / JSONB / Prisma",
         points: [
           "商业价值：通过对话式搜索、造型建议和 full-look 推荐，让活动商品更容易被发现、理解和购买。",
-          "Agent 技术：结构化意图解析、catalog grounding、混合检索、排序、搭配组装和质量评测。",
+          "Agent 技术：结构化意图解析、catalog grounding、排序、搭配组装和质量评测。",
         ],
       },
       {
@@ -333,15 +353,27 @@ const copy = {
         "一个围绕硬核工程叙事建立起来的技术媒体资产：Redis 源码与分布式系统、AI Agent 原理、产品落地工作流。它不只是粉丝数证明，也证明我能把复杂系统包装成可信、可传播、能服务技术产品增长的内容。",
       cta: "打开 Bilibili",
     },
+    articles: [
+      {
+        title: "How to Design Prompt Cache for Long-Context Agents: A Real Atypica.AI Experiment",
+        meta: "Atypica.ai Engineering",
+        href: "https://atypica.ai/blog/how-to-design-prompt-cache-for-long-context-agents",
+        body:
+          "一篇真实生产实验：长上下文 Research Agent 如何设计 Prompt Cache，包括 token 阈值 checkpoint、离线仿真、provider cache metadata 和成本可观测性。",
+      },
+    ],
     stack: [
-      ["Agent", "AI SDK, tool calling, structured output, Zod, Plan/Execute, Skills, MCP, context engineering"],
-      ["后端", "Node.js, Next.js App Router, Route Handler, Prisma, PostgreSQL, Redis, Stripe, raw SQL"],
-      ["检索", "pgvector, HNSW, tsvector, JSONB containment, embedding, semantic hybrid rerank, facet parser"],
+      ["常用", "ClaudeCode, Cursor, Codex, Openclaw, Hermes"],
+      ["Agent", "AI SDK, tool calling, Skills, MCP, context engineering, memory, evaluation loops, Loop Engineering"],
+      ["后端", "Node.js, Java, Python, Next.js App Router, Route Handler, Prisma, PostgreSQL, Redis, Stripe, raw SQL"],
+      ["前端", "React, Next.js, TypeScript, responsive UI, pixel systems, interaction design"],
+      ["动画", "Remotion, Hyperframe, CSS motion, scroll interactions, 3D tilt"],
       ["质量", "Vitest, Playwright, evaluation harness, API batch tests, LLM judge, health checks"],
     ],
     contact: {
       title: "一起构建。",
       body: "上海 / 台北 · 微信：wengxiaoxiong-com",
+      friends: "友情链接",
     },
   },
 };
@@ -458,9 +490,10 @@ export default function Home() {
     () => [
       ["#bilibili", t.nav[0]],
       ["#apps", t.nav[1]],
-      ["#work", t.nav[2]],
-      ["#stack", t.nav[3]],
-      ["#contact", t.nav[4]],
+      ["#articles", t.nav[2]],
+      ["#work", t.nav[3]],
+      ["#stack", t.nav[4]],
+      ["#contact", t.nav[5]],
     ],
     [t.nav],
   );
@@ -595,6 +628,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section articles reveal" id="articles">
+        <div className="sectionLabel">{t.sections.articles}</div>
+        <div className="articleList">
+          {t.articles.map((article) => (
+            <a className="articleCard tilt3d slide3d" href={article.href} target="_blank" rel="noopener noreferrer" key={article.href}>
+              <div className="articleMeta">{article.meta}</div>
+              <h2>{article.title}</h2>
+              <p>{article.body}</p>
+              <span>{locale === "en" ? "Read article" : "阅读文章"}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="section intro reveal" id="work">
         <div className="sectionLabel">{t.sections.work}</div>
         <div className="timeline tilt3d slide3d">
@@ -642,6 +689,14 @@ export default function Home() {
           <h2>{t.contact.title}</h2>
           <p>owner@wengxiaoxiong.com</p>
           <p>{t.contact.body}</p>
+          <div className="friendLinks" aria-label={t.contact.friends}>
+            <span>{t.contact.friends}</span>
+            {friendLinks.map((link) => (
+              <a href={link.href} target="_blank" rel="noopener noreferrer" key={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
         <a className="siteLink" href="https://wengxiaoxiong.com" target="_blank" rel="noopener noreferrer">
           wengxiaoxiong.com
