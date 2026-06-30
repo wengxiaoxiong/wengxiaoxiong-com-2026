@@ -1,0 +1,433 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+
+type Locale = "en" | "zh";
+
+const copy = {
+  en: {
+    nav: ["Work", "Systems", "Thinking", "Contact"],
+    switchLabel: "中文",
+    heroKicker: "AI Native Founder / Agent Systems Builder",
+    name: "Weng Xiaoxiong",
+    hero:
+      "I turn ambiguous business opportunities into agentic systems: research, content, recruiting, product innovation, development, operations, and growth workflows that can run, learn, and compound.",
+    ctas: ["Email", "GitHub", "Bilibili"],
+    ticker: ["Business", "Product", "Architecture", "Agent Runtime", "Retrieval", "Evaluation"],
+    sections: {
+      work: "01 / Founder Work",
+      systems: "02 / Business Systems",
+      thinking: "03 / Founder Thinking",
+      content: "04 / Audience & Proof",
+      stack: "05 / Agent Stack",
+      contact: "Contact",
+    },
+    work: [
+      {
+        meta: "2024 - Now · Shanghai",
+        title: "Tezign · AI Agent / Product Engineering",
+        points: [
+          "Turn enterprise research, product innovation, and content workflows into Agent systems that can plan, execute, evaluate, and deliver business outputs.",
+          "Built Atypica.AI Research Agent around a repeatable commercial workflow: clarify market questions, simulate consumers, gather signals, and produce decision-ready reports.",
+          "Designed Agent runtime patterns such as Plan Mode, tool gating, messages-as-source-of-truth, skills, memory, retrieval, and evaluation loops.",
+          "Worked across product surface, backend architecture, AI workflow design, and delivery quality so Agent prototypes could become usable systems.",
+        ],
+      },
+      {
+        meta: "2023 - 2024 · Shanghai",
+        title: "SenseTime · LLM Application / Agent Intern",
+        points: [
+          "Explored how LLM applications enter enterprise workflows through knowledge, tool calling, task automation, and internal productivity systems.",
+        ],
+      },
+    ],
+    systems: [
+      {
+        name: "Atypica.AI",
+        title: "Consumer Research Agent Platform",
+        meta: "Next.js / AI SDK / Prisma / PostgreSQL",
+        link: "https://atypica.ai/",
+        points: [
+          "Commercial value: compress consumer research from a service-heavy process into an AI-assisted product workflow for brands and innovation teams.",
+          "Agent technique: planning, interview/discussion simulation, social observation, persona retrieval, long-running tasks, memory, skills, and report generation.",
+        ],
+      },
+      {
+        name: "Confidential Luxury Commerce",
+        title: "Campaign Commerce Agent",
+        meta: "PostgreSQL / pgvector / JSONB / Prisma",
+        points: [
+          "Commercial value: make a luxury campaign shoppable through conversational search, styling guidance, and full-look recommendations without exposing brand data here.",
+          "Agent technique: structured intent parsing, catalog grounding, hybrid retrieval, ranking, recommendation assembly, and quality evaluation.",
+        ],
+      },
+      {
+        name: "Faishion",
+        title: "Fashion Agent & Generation Task System",
+        meta: "AI SDK / R2 / Inngest / Evaluation",
+        points: [
+          "Commercial value: connect chat, products, styling, and image-generation tasks into a consumer-facing fashion workflow.",
+          "Agent technique: streaming chat, product-search tools, natural-language actions, task queues, image assets, human scoring, reruns, and alerts.",
+        ],
+      },
+      {
+        name: "PitchLab",
+        title: "Voice-based AI Sales Training",
+        meta: "Multi-Agent / Speech / Feedback",
+        link: "https://pitchlab.pro/",
+        points: [
+          "Commercial value: lower the cost of sales training and make excellent sales behavior repeatable across teams.",
+          "Agent technique: customer role-play, speech interaction, expression evaluation, realism checks, and personalized coaching feedback.",
+        ],
+      },
+      {
+        name: "Agent Tools / Skill CLI",
+        title: "Developer Infrastructure for Agents",
+        meta: "CLI / Skills / Workflow",
+        points: [
+          "Commercial value: help developers package useful capabilities so Agent systems can adopt tools faster with less integration overhead.",
+          "Agent technique: skill metadata, progressive disclosure, CLI-first tooling, workflow composition, and lower-context tool usage.",
+        ],
+      },
+      {
+        name: "Commercial Experiments",
+        title: "SaaS, Recruiting, Content and Automation",
+        meta: "Product / Sales / Delivery",
+        points: [
+          "Validated founder instincts through paid AI SaaS, car-rental SaaS + AI analytics, recruiting automation, AI content workflows, and persona/social experiments.",
+          "Focus: find real demand, reach decision makers, ship a working system, learn from usage, and turn the process into a repeatable business loop.",
+        ],
+      },
+    ],
+    thinking: [
+      {
+        label: "Commercial thinking",
+        body:
+          "I care whether a system can close deals, reduce labor cost, create a repeatable workflow, and turn delivery into a compounding asset.",
+      },
+      {
+        label: "Product thinking",
+        body:
+          "I translate messy user needs into product surfaces, feedback loops, evaluation criteria, and workflows that users can actually repeat.",
+      },
+      {
+        label: "Architecture thinking",
+        body:
+          "I separate runtime, tools, context, memory, retrieval, evaluation, and human approval so Agent products stay debuggable and extensible.",
+      },
+      {
+        label: "Organization thinking",
+        body:
+          "I see AI as part of the team operating system: humans set goals and judgment, agents execute, report, and improve the workflow.",
+      },
+    ],
+    content: {
+      title: "熊老板i · Bilibili",
+      stats: "10k+ followers",
+      body:
+        "A technical channel focused on hard engineering topics. Earlier content explained Redis internals, engineering systems, and later AI Agent principles. The channel is also a proof of work: complex systems can be explained, produced, and distributed as repeatable content workflows.",
+    },
+    stack: [
+      ["Agent", "AI SDK, tool calling, structured output, Zod, Plan/Execute, Skills, MCP, context engineering"],
+      ["Backend", "Node.js, Next.js App Router, Route Handler, Prisma, PostgreSQL, Redis, Stripe, raw SQL"],
+      ["Retrieval", "pgvector, HNSW, tsvector, JSONB containment, embedding, semantic hybrid rerank, facet parser"],
+      ["Quality", "Vitest, Playwright, evaluation harness, API batch tests, LLM judge, health checks"],
+    ],
+    contact: {
+      title: "Build with me.",
+      body: "Shanghai / Taipei · WeChat: wengxiaoxiong-com",
+    },
+  },
+  zh: {
+    nav: ["经历", "系统", "思维", "联系"],
+    switchLabel: "EN",
+    heroKicker: "AI Native Founder / Agent Systems Builder",
+    name: "翁小雄",
+    hero:
+      "我擅长把模糊的商业机会抽象成可自动运行的 AI 系统：调研、内容、招聘、产品创新、开发、运营和增长，都可以变成 Agent 可调度、可评测、可复利的工作流。",
+    ctas: ["邮件", "GitHub", "Bilibili"],
+    ticker: ["商业", "产品", "架构", "Agent Runtime", "检索", "评测"],
+    sections: {
+      work: "01 / Founder 经历",
+      systems: "02 / 商业系统",
+      thinking: "03 / Founder 思维",
+      content: "04 / 受众与影响力",
+      stack: "05 / Agent 技术栈",
+      contact: "联系",
+    },
+    work: [
+      {
+        meta: "2024 - 至今 · 上海",
+        title: "特赞 Tezign · AI Agent / Product Engineering",
+        points: [
+          "把企业调研、产品创新和内容工作流改造成可规划、可执行、可评测、可交付的 Agent 系统。",
+          "围绕 Atypica.AI Research Agent 建立可复用商业流程：澄清市场问题、模拟消费者、收集信号、输出可决策报告。",
+          "设计 Plan Mode、工具门控、messages-as-source-of-truth、Skills、Memory、Retrieval、Evaluation 等 Agent runtime 模式。",
+          "横跨产品界面、后端架构、AI 工作流设计和交付质量，把 Agent 原型推进成真实可用的业务系统。",
+        ],
+      },
+      {
+        meta: "2023 - 2024 · 上海",
+        title: "SenseTime 商汤科技 · LLM Application / Agent Intern",
+        points: ["探索 LLM 如何进入企业知识、工具调用、任务自动化和内部效率系统。"],
+      },
+    ],
+    systems: [
+      {
+        name: "Atypica.AI",
+        title: "消费者研究 Agent 平台",
+        meta: "Next.js / AI SDK / Prisma / PostgreSQL",
+        link: "https://atypica.ai/",
+        points: [
+          "商业价值：把高度依赖咨询服务的消费者研究，压缩成品牌和创新团队可反复使用的 AI 产品工作流。",
+          "Agent 技术：规划、访谈/群体讨论模拟、社媒观察、Persona 检索、长任务、Memory、Skills 和报告生成。",
+        ],
+      },
+      {
+        name: "某奢侈品电商活动",
+        title: "品牌活动 Commerce Agent",
+        meta: "PostgreSQL / pgvector / JSONB / Prisma",
+        points: [
+          "商业价值：通过对话式搜索、造型建议和 full-look 推荐，让活动商品更容易被发现、理解和购买。",
+          "Agent 技术：结构化意图解析、catalog grounding、混合检索、排序、搭配组装和质量评测。",
+        ],
+      },
+      {
+        name: "Faishion",
+        title: "时尚 Agent 与生成任务系统",
+        meta: "AI SDK / R2 / Inngest / Evaluation",
+        points: [
+          "商业价值：把聊天、商品、搭配、图像生成任务连成面向消费者的时尚体验链路。",
+          "Agent 技术：streaming chat、商品搜索工具、自然语言动作、任务队列、图片资产、人类评分、复跑和告警。",
+        ],
+      },
+      {
+        name: "PitchLab",
+        title: "基于语音的 AI 销售训练",
+        meta: "Multi-Agent / Speech / Feedback",
+        link: "https://pitchlab.pro/",
+        points: [
+          "商业价值：降低销售训练成本，把优秀销售经验复制给更多一线人员。",
+          "Agent 技术：客户角色扮演、语音交互、表达评估、真实度判断和个性化反馈。",
+        ],
+      },
+      {
+        name: "Agent Tools / Skill CLI",
+        title: "面向 Agent 的开发者基础设施",
+        meta: "CLI / Skills / Workflow",
+        points: [
+          "商业价值：帮助开发者把能力包装成 Agent 可用工具，降低复杂系统集成成本。",
+          "Agent 技术：Skill metadata、渐进式披露、CLI-first tooling、workflow composition 和低上下文工具调用。",
+        ],
+      },
+      {
+        name: "商业化实验",
+        title: "SaaS、招聘、内容和自动化",
+        meta: "Product / Sales / Delivery",
+        points: [
+          "通过付费 AI SaaS、日本租车 SaaS + AI 分析、招聘自动化、AI 内容工作流、AI Persona 社交实验验证 founder 判断。",
+          "重点不是堆项目，而是找到真实需求、接近决策人、交付可用系统、从使用中学习，并把过程沉淀成可复制业务闭环。",
+        ],
+      },
+    ],
+    thinking: [
+      {
+        label: "商业思维",
+        body: "关注系统能不能成交、降低人力成本、形成可复制交付，并把一次项目沉淀成长期资产。",
+      },
+      {
+        label: "产品思维",
+        body: "把混乱需求翻译成产品界面、反馈循环、评测标准和用户可重复使用的工作流。",
+      },
+      {
+        label: "技术架构思维",
+        body: "拆分 runtime、tools、context、memory、retrieval、evaluation 和 human approval，让 Agent 产品可调试、可扩展。",
+      },
+      {
+        label: "组织系统思维",
+        body: "把 AI 当作团队操作系统的一部分：人类设定目标和判断，Agent 执行、汇报、复盘并优化流程。",
+      },
+    ],
+    content: {
+      title: "熊老板i · Bilibili",
+      stats: "1万+粉丝",
+      body:
+        "高难度技术内容频道，早期重点讲 Redis 源码、工程系统设计，后来延伸到 AI Agent 原理。这个账号也是 Proof of Work：复杂系统不仅要能做出来，也要能讲清楚、规模化生产和分发。",
+    },
+    stack: [
+      ["Agent", "AI SDK, tool calling, structured output, Zod, Plan/Execute, Skills, MCP, context engineering"],
+      ["后端", "Node.js, Next.js App Router, Route Handler, Prisma, PostgreSQL, Redis, Stripe, raw SQL"],
+      ["检索", "pgvector, HNSW, tsvector, JSONB containment, embedding, semantic hybrid rerank, facet parser"],
+      ["质量", "Vitest, Playwright, evaluation harness, API batch tests, LLM judge, health checks"],
+    ],
+    contact: {
+      title: "一起构建。",
+      body: "上海 / 台北 · 微信：wengxiaoxiong-com",
+    },
+  },
+};
+
+export default function Home() {
+  const [locale, setLocale] = useState<Locale>("en");
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("locale") as Locale | null;
+    if (saved === "en" || saved === "zh") {
+      setLocale(saved);
+      return;
+    }
+
+    if (navigator.language.toLowerCase().startsWith("zh")) {
+      setLocale("zh");
+    }
+  }, []);
+
+  const t = copy[locale];
+  const nextLocale = locale === "en" ? "zh" : "en";
+
+  const navTargets = useMemo(
+    () => [
+      ["#work", t.nav[0]],
+      ["#systems", t.nav[1]],
+      ["#thinking", t.nav[2]],
+      ["#contact", t.nav[3]],
+    ],
+    [t.nav],
+  );
+
+  function switchLocale() {
+    window.localStorage.setItem("locale", nextLocale);
+    setLocale(nextLocale);
+  }
+
+  return (
+    <main>
+      <section className="hero" aria-label={t.name}>
+        <div className="scanline" />
+        <nav className="nav" aria-label="Primary">
+          {navTargets.map(([href, label]) => (
+            <a href={href} key={href}>
+              {label}
+            </a>
+          ))}
+          <button type="button" onClick={switchLocale}>
+            {t.switchLabel}
+          </button>
+        </nav>
+
+        <div className="heroContent">
+          <p className="eyebrow">{t.heroKicker}</p>
+          <h1>{t.name}</h1>
+          <p className="subtitle">{t.hero}</p>
+          <div className="heroActions">
+            <a href="mailto:owner@wengxiaoxiong.com">{t.ctas[0]}</a>
+            <a href="https://github.com/wengxiaoxiong/" target="_blank" rel="noopener noreferrer">
+              {t.ctas[1]}
+            </a>
+            <a href="https://space.bilibili.com/25484432" target="_blank" rel="noopener noreferrer">
+              {t.ctas[2]}
+            </a>
+          </div>
+        </div>
+
+        <div className="ticker" aria-hidden="true">
+          {t.ticker.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="section intro" id="work">
+        <div className="sectionLabel">{t.sections.work}</div>
+        <div className="timeline">
+          {t.work.map((item) => (
+            <article className="entry" key={item.title}>
+              <div className="entryMeta">{item.meta}</div>
+              <h2>{item.title}</h2>
+              <ul>
+                {item.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section projects" id="systems">
+        <div className="sectionLabel">{t.sections.systems}</div>
+        <div className="projectGrid">
+          {t.systems.map((project) => (
+            <article className="project" key={project.name}>
+              <div className="projectTop">
+                <span>{project.name}</span>
+                <span>{project.meta}</span>
+              </div>
+              <h2>{project.title}</h2>
+              <ul>
+                {project.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              {"link" in project && project.link ? (
+                <a className="projectLink" href={project.link} target="_blank" rel="noopener noreferrer">
+                  {locale === "en" ? "Open link" : "打开链接"}
+                </a>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section thinking" id="thinking">
+        <div className="sectionLabel">{t.sections.thinking}</div>
+        <div className="thinkingGrid">
+          {t.thinking.map((item) => (
+            <article className="thinkingCard" key={item.label}>
+              <h2>{item.label}</h2>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section contentProof">
+        <div className="sectionLabel">{t.sections.content}</div>
+        <div className="mediaPanel">
+          <div>
+            <p className="entryMeta">{t.content.stats}</p>
+            <h2>{t.content.title}</h2>
+            <p>{t.content.body}</p>
+          </div>
+          <a href="https://space.bilibili.com/25484432" target="_blank" rel="noopener noreferrer">
+            BILIBILI
+          </a>
+        </div>
+      </section>
+
+      <section className="section skills" aria-label="Stack">
+        <div className="sectionLabel">{t.sections.stack}</div>
+        <div className="skillList">
+          {t.stack.map(([label, value]) => (
+            <div className="skillRow" key={label}>
+              <span>{label}</span>
+              <p>{value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="contactSection" id="contact">
+        <div>
+          <p className="eyebrow">{t.sections.contact}</p>
+          <h2>{t.contact.title}</h2>
+          <p>owner@wengxiaoxiong.com</p>
+          <p>{t.contact.body}</p>
+        </div>
+        <a className="siteLink" href="https://wengxiaoxiong.com" target="_blank" rel="noopener noreferrer">
+          wengxiaoxiong.com
+        </a>
+      </section>
+    </main>
+  );
+}
