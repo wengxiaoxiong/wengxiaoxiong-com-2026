@@ -116,7 +116,7 @@ const copy = {
     heroKicker: "AI Native Agent Systems Builder / Backend Engineer",
     name: "Weng Xiaoxiong",
     hero:
-      "I turn ambiguous business opportunities into agentic systems: research, content, recruiting, product innovation, development, operations, and growth workflows that can run, learn, and compound.",
+      "I build AI products for real business workflows: research agents, content systems, recruiting automation, sales training, commerce recommendations, and SaaS operations. I care about product judgment, commercial loops, and systems that actually ship.",
     ctas: ["Email", "GitHub", "Bilibili"],
     ticker: ["Business", "Product", "Architecture", "Agent Runtime", "Loop Engineering", "Evaluation"],
     sections: {
@@ -169,7 +169,7 @@ const copy = {
         logo: "/logos/atypica.jpg",
         points: [
           "Commercial value: compress consumer research from a service-heavy process into an AI-assisted product workflow for brands and innovation teams.",
-          "Agent technique: planning, interview/discussion simulation, social observation, persona memory matching, long-running tasks, skills, and report generation.",
+          "Agent technique: planning, interview/discussion simulation, Xiaohongshu/social observation, persona memory matching, long-running tasks, skills, and report generation.",
         ],
       },
       {
@@ -210,15 +210,45 @@ const copy = {
         logo: "/logos/agent-tools.svg",
         points: [
           "Commercial value: package reusable Agent capabilities, SaaS workflows, recruiting automation, AI content operations, and delivery playbooks into repeatable business loops.",
-          "Agent technique: skill metadata, progressive disclosure, CLI-first tooling, workflow composition, low-context tool usage, and human-in-the-loop operations.",
+          "Agent technique: skill metadata, progressive disclosure, CLI-first tooling, workflow composition, low-context tool usage, and human-in-the-loop operations for research, social content, and delivery.",
         ],
       },
     ],
+    legacy: {
+      title: "Legacy Projects",
+      items: [
+        {
+          name: "Short-Drama Content Engine",
+          tag: "AIGC Content / Commercialized",
+          body:
+            "Built an AI-assisted pipeline for story breakdown, episode structure, script generation, visual planning, and delivery review; commercialized as a content-generation prototype.",
+        },
+        {
+          name: "Xiaohongshu Social Production System",
+          tag: "Social Content Ops / Agent Workflow",
+          body:
+            "Built repeatable workflows for AI/Agent engineering posts: topic mining, hook generation, draft expansion, cover-slide preview, and publishing handoff.",
+        },
+        {
+          name: "ComicGen",
+          tag: "AIGC Comic / Workflow Product",
+          body:
+            "Designed a multi-stage comic workflow from structured story breakdown to storyboard import, prompt generation, image-model orchestration, and edited output.",
+        },
+        {
+          name: "Soukyo Rent-a-Car",
+          tag: "Japan SaaS / Commerce",
+          body:
+            "Rebuilt a Japan rental-car service into a Next.js product with i18n, payment, email, customer support, cloud storage, and production delivery.",
+          link: "https://soukyo-rent-a-car.com/",
+        },
+      ],
+    },
     content: {
       title: "熊老板i · Bilibili",
       stats: "10k+ followers · Redis systems + Agent engineering",
       body:
-        "A technical media asset built around serious engineering storytelling: Redis internals, distributed systems, AI Agent principles, and product-building workflows. It proves more than audience reach: I can package complex systems into narratives that build trust, educate developers, and create distribution for technical products.",
+        "A technical media asset built around serious engineering storytelling: Redis internals, distributed systems, AI Agent principles, and product-building workflows. It also connects to a broader content-systems ability: turning technical knowledge into Bilibili videos, Xiaohongshu-style posts, and reusable social production loops.",
       cta: "Open Bilibili",
     },
     articles: [
@@ -250,7 +280,7 @@ const copy = {
     heroKicker: "AI Native Agent Systems Builder / Backend Engineer",
     name: "翁小雄",
     hero:
-      "我擅长把模糊的商业机会抽象成可自动运行的 AI 系统：调研、内容、招聘、产品创新、开发、运营和增长，都可以变成 Agent 可调度、可评测、可复利的工作流。",
+      "我把 AI 做进真实业务里：调研 Agent、内容生产、招聘自动化、销售训练、商品推荐和 SaaS 运营。做过短剧生成、小红书内容生产系统、AI 调研和出海产品，重视产品判断、商业闭环和系统落地。",
     ctas: ["邮件", "GitHub", "Bilibili"],
     ticker: ["商业", "产品", "架构", "Agent Runtime", "Loop Engineering", "评测"],
     sections: {
@@ -301,7 +331,7 @@ const copy = {
         logo: "/logos/atypica.jpg",
         points: [
           "商业价值：把高度依赖咨询服务的消费者研究，压缩成品牌和创新团队可反复使用的 AI 产品工作流。",
-          "Agent 技术：规划、访谈/群体讨论模拟、社媒观察、Persona memory matching、长任务、Skills 和报告生成。",
+          "Agent 技术：规划、访谈/群体讨论模拟、小红书/社媒观察、Persona memory matching、长任务、Skills 和报告生成。",
         ],
       },
       {
@@ -342,15 +372,45 @@ const copy = {
         logo: "/logos/agent-tools.svg",
         points: [
           "商业价值：把 Agent 能力封装、SaaS 工作流、招聘自动化、AI 内容运营和交付方法沉淀为可复制业务闭环。",
-          "Agent 技术：Skill metadata、渐进式披露、CLI-first tooling、workflow composition、低上下文工具调用和 human-in-the-loop 运营。",
+          "Agent 技术：Skill metadata、渐进式披露、CLI-first tooling、workflow composition、低上下文工具调用，以及面向调研、社媒内容和交付的 human-in-the-loop 运营。",
         ],
       },
     ],
+    legacy: {
+      title: "Legacy Projects",
+      items: [
+        {
+          name: "短剧内容生成引擎",
+          tag: "AIGC 内容 / 商业化",
+          body:
+            "构建从故事拆解、单集结构、剧本文案、视觉规划到交付审校的 AI 辅助流水线，并作为内容生成原型完成商业化落地。",
+        },
+        {
+          name: "小红书社媒内容生产系统",
+          tag: "Social Content Ops / Agent Workflow",
+          body:
+            "沉淀 AI/Agent 工程类内容的可复用生产流程：选题挖掘、开头钩子、正文扩写、封面图预览和发布交接。",
+        },
+        {
+          name: "ComicGen",
+          tag: "AIGC 漫画 / Workflow Product",
+          body:
+            "设计结构化拆解、分镜导入、提示词生成、图像模型编排和人工编辑闭环的多阶段漫画生成工作流。",
+        },
+        {
+          name: "Soukyo Rent-a-Car",
+          tag: "日本出海 SaaS / Commerce",
+          body:
+            "把日本租车服务重构为 Next.js 产品，覆盖多语言、支付、邮件、客服、云存储和线上交付。",
+          link: "https://soukyo-rent-a-car.com/",
+        },
+      ],
+    },
     content: {
       title: "熊老板i · Bilibili",
       stats: "1万+粉丝 · Redis 系统设计 + Agent 工程",
       body:
-        "一个围绕硬核工程叙事建立起来的技术媒体资产：Redis 源码与分布式系统、AI Agent 原理、产品落地工作流。它不只是粉丝数证明，也证明我能把复杂系统包装成可信、可传播、能服务技术产品增长的内容。",
+        "一个围绕硬核工程叙事建立起来的技术媒体资产：Redis 源码与分布式系统、AI Agent 原理、产品落地工作流。它也连接到更完整的内容系统能力：把技术知识转成 Bilibili 视频、小红书风格图文和可复用的社媒生产流程。",
       cta: "打开 Bilibili",
     },
     articles: [
@@ -383,15 +443,21 @@ export default function Home() {
 
   useEffect(() => {
     const root = document.documentElement;
+    const main = document.querySelector("main");
+    const mobileQuery = window.matchMedia("(max-width: 700px)");
     let frame = 0;
 
     function updateScroll() {
       frame = 0;
-      const maxScroll = Math.max(document.body.scrollHeight - window.innerHeight, 1);
-      const progress = Math.min(window.scrollY / maxScroll, 1);
+      const useMainScroll = mobileQuery.matches && main;
+      const scrollTop = useMainScroll ? main.scrollTop : window.scrollY;
+      const maxScroll = useMainScroll
+        ? Math.max(main.scrollHeight - main.clientHeight, 1)
+        : Math.max(document.body.scrollHeight - window.innerHeight, 1);
+      const progress = Math.min(scrollTop / maxScroll, 1);
       root.style.setProperty("--scroll-progress", `${progress * 100}%`);
-      root.style.setProperty("--scroll-shift", `${Math.min(window.scrollY * 0.1, 110)}px`);
-      root.style.setProperty("--scroll-float", `${Math.min(window.scrollY * 0.045, 54)}px`);
+      root.style.setProperty("--scroll-shift", `${Math.min(scrollTop * 0.1, 110)}px`);
+      root.style.setProperty("--scroll-float", `${Math.min(scrollTop * 0.045, 54)}px`);
     }
 
     function onScroll() {
@@ -401,10 +467,14 @@ export default function Home() {
 
     updateScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    main?.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      main?.removeEventListener("scroll", onScroll);
     };
   }, []);
 
@@ -506,14 +576,14 @@ export default function Home() {
   return (
     <main>
       <div className="scrollProgress" aria-hidden="true" />
-      <div className="scrollRail" aria-hidden="true">
-        <span>BUILD</span>
-        <span>SHIP</span>
-        <span>PROVE</span>
-      </div>
-
-      <section className="hero" aria-label={t.name}>
-        <div className="scanline" />
+      <header className="siteHeader">
+        <a className="brandMark" href="#" aria-label={t.name}>
+          <span className="brandLogo" aria-hidden="true" />
+          <span className="brandText">
+            <strong>{t.name}</strong>
+            <span>Agent Systems</span>
+          </span>
+        </a>
         <nav className="nav" aria-label="Primary">
           {navTargets.map(([href, label]) => (
             <a href={href} key={href}>
@@ -524,7 +594,15 @@ export default function Home() {
             {t.switchLabel}
           </button>
         </nav>
+      </header>
+      <div className="scrollRail" aria-hidden="true">
+        <span>BUILD</span>
+        <span>SHIP</span>
+        <span>PROVE</span>
+      </div>
 
+      <section className="hero" aria-label={t.name}>
+        <div className="scanline" />
         <div className="heroContent">
           <p className="eyebrow">{t.heroKicker}</p>
           <h1>{t.name}</h1>
@@ -625,6 +703,27 @@ export default function Home() {
               </article>
             );
           })}
+        </div>
+        <div className="legacyBlock tilt3d slide3d">
+          <div className="legacyHeader">
+            <span>{t.legacy.title}</span>
+          </div>
+          <div className="legacyGrid">
+            {t.legacy.items.map((item) => (
+              <article className="legacyItem" key={item.name}>
+                <div>
+                  <p className="legacyTag">{item.tag}</p>
+                  <h3>{item.name}</h3>
+                  <p>{item.body}</p>
+                </div>
+                {"link" in item && item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    {locale === "en" ? "Open" : "打开"}
+                  </a>
+                ) : null}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
