@@ -42,6 +42,7 @@ a {
 
 main {
   min-height: 100vh;
+  perspective: 1400px;
 }
 
 .scrollProgress {
@@ -234,6 +235,28 @@ h1 {
   filter: blur(0);
 }
 
+.tilt3d {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --tilt-z: 0px;
+  transform-style: preserve-3d;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+  will-change: transform;
+}
+
+.tilt3d:hover {
+  transform: perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateZ(var(--tilt-z));
+  border-color: rgba(97, 214, 255, 0.74);
+  box-shadow: 11px 13px 0 var(--shadow), 0 0 32px rgba(97, 214, 255, 0.08);
+}
+
+.slide3d {
+  transform-origin: center center;
+}
+
 .sectionLabel {
   display: inline-block;
   margin-bottom: 18px;
@@ -245,7 +268,6 @@ h1 {
 .timeline,
 .projectGrid,
 .skillList,
-.thinkingGrid,
 .biliShowcase {
   border: 2px solid var(--line);
   background: rgba(17, 22, 25, 0.9);
@@ -290,7 +312,7 @@ h1 {
 .entryBrand img {
   width: 24px;
   height: 24px;
-  object-fit: cover;
+  object-fit: contain;
   border: 1px solid rgba(247, 241, 210, 0.35);
   background: #fff;
 }
@@ -310,7 +332,6 @@ h1 {
 
 .entry h2,
 .project h2,
-.thinkingCard h2,
 .biliIntro h2,
 .contactSection h2 {
   margin: 8px 0 12px;
@@ -319,7 +340,6 @@ h1 {
 }
 
 .entry p,
-.thinkingCard p,
 .biliIntro p,
 .contactSection p {
   margin: 0;
@@ -391,7 +411,7 @@ li::before {
   width: 38px;
   height: 38px;
   flex: 0 0 auto;
-  object-fit: cover;
+  object-fit: contain;
   border: 2px solid rgba(247, 241, 210, 0.46);
   background: #fff;
   box-shadow: 3px 3px 0 var(--shadow);
@@ -404,6 +424,10 @@ li::before {
 
 .projectBrand:hover span {
   color: var(--green);
+}
+
+.projectBrandStatic {
+  cursor: default;
 }
 
 .projectMetaText {
@@ -427,25 +451,6 @@ li::before {
 .projectLink:hover {
   background: var(--cyan);
   color: #061115;
-}
-
-.thinkingGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.thinkingCard {
-  padding: 22px;
-  border-right: 2px solid var(--line);
-}
-
-.thinkingCard:last-child {
-  border-right: 0;
-}
-
-.thinkingCard h2 {
-  color: var(--green);
-  font-size: clamp(20px, 2.4vw, 28px);
 }
 
 .biliShowcase {
@@ -676,24 +681,8 @@ li::before {
     grid-template-columns: 1fr;
   }
 
-  .thinkingGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .project {
     min-height: auto;
-  }
-
-  .thinkingCard {
-    border-bottom: 2px solid var(--line);
-  }
-
-  .thinkingCard:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .thinkingCard:nth-last-child(-n + 2) {
-    border-bottom: 0;
   }
 
   .skillRow,
@@ -746,28 +735,10 @@ li::before {
 
   li,
   .entry p,
-  .thinkingCard p,
   .biliIntro p,
   .skillRow p,
   .contactSection p {
     font-size: 14px;
-  }
-
-  .thinkingGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .thinkingCard,
-  .thinkingCard:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .thinkingCard:nth-child(-n + 3) {
-    border-bottom: 2px solid var(--line);
-  }
-
-  .thinkingCard:last-child {
-    border-bottom: 0;
   }
 
   .coverStack {
@@ -794,6 +765,11 @@ li::before {
     transform: none;
     filter: none;
     transition: none;
+  }
+
+  .tilt3d,
+  .tilt3d:hover {
+    transform: none;
   }
 
   .coverTrack {

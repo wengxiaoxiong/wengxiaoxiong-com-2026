@@ -105,26 +105,27 @@ const biliVideos = [
 
 const copy = {
   en: {
-    nav: ["Work", "Systems", "Thinking", "Contact"],
+    nav: ["Bilibili", "Apps", "Work", "Stack", "Contact"],
     switchLabel: "中文",
-    heroKicker: "AI Native Founder / Agent Systems Builder",
+    heroKicker: "AI Native Agent Systems Builder / Backend Engineer",
     name: "Weng Xiaoxiong",
     hero:
       "I turn ambiguous business opportunities into agentic systems: research, content, recruiting, product innovation, development, operations, and growth workflows that can run, learn, and compound.",
     ctas: ["Email", "GitHub", "Bilibili"],
     ticker: ["Business", "Product", "Architecture", "Agent Runtime", "Retrieval", "Evaluation"],
     sections: {
-      work: "01 / Founder Work",
-      systems: "02 / Business Systems",
-      thinking: "03 / Founder Thinking",
-      content: "04 / Audience & Proof",
-      stack: "05 / Agent Stack",
+      content: "01 / Audience & Proof",
+      systems: "02 / Apps",
+      work: "03 / Work Experience",
+      stack: "04 / Agent Stack",
       contact: "Contact",
     },
     work: [
       {
         meta: "2024 - Now · Shanghai",
         title: "Tezign · AI Agent / Product Engineering",
+        link: "https://www.tezign.com/",
+        logo: "/logos/tezign.png",
         points: [
           "Turn enterprise research, product innovation, and content workflows into Agent systems that can plan, execute, evaluate, and deliver business outputs.",
           "Built Atypica.AI Research Agent around a repeatable commercial workflow: clarify market questions, simulate consumers, gather signals, and produce decision-ready reports.",
@@ -145,6 +146,8 @@ const copy = {
       {
         meta: "2023 - 2024 · Shanghai",
         title: "SenseTime · LLM Application / Agent Intern",
+        link: "https://www.sensetime.com/en",
+        logo: "/logos/sensetime.png",
         points: [
           "Explored how LLM applications enter enterprise workflows through knowledge, tool calling, task automation, and internal productivity systems.",
         ],
@@ -185,17 +188,6 @@ const copy = {
         ],
       },
       {
-        name: "捏Ta",
-        title: "Anime-style Image Generation Workflow",
-        meta: "Stable Diffusion / LoRA / Personalization",
-        link: "https://app.nieta.art/",
-        logo: "/logos/nieta.ico",
-        points: [
-          "Commercial value: turn personalized anime-style generation into an end-user product instead of a raw model demo.",
-          "Generation technique: customized Stable Diffusion and LoRA workflow, controllable personalization, style presets, and repeatable character image output.",
-        ],
-      },
-      {
         name: "Confidential Luxury Commerce",
         title: "Campaign Commerce Agent",
         meta: "PostgreSQL / pgvector / JSONB / Prisma",
@@ -205,44 +197,14 @@ const copy = {
         ],
       },
       {
-        name: "Agent Tools / Skill CLI",
-        title: "Developer Infrastructure for Agents",
-        meta: "CLI / Skills / Workflow",
+        name: "Agent Tools & Automation",
+        title: "Agent Infrastructure and Commercial Automation",
+        meta: "CLI / Skills / Workflow / Product Ops",
+        logo: "/logos/agent-tools.svg",
         points: [
-          "Commercial value: help developers package useful capabilities so Agent systems can adopt tools faster with less integration overhead.",
-          "Agent technique: skill metadata, progressive disclosure, CLI-first tooling, workflow composition, and lower-context tool usage.",
+          "Commercial value: package reusable Agent capabilities, SaaS workflows, recruiting automation, AI content operations, and delivery playbooks into repeatable business loops.",
+          "Agent technique: skill metadata, progressive disclosure, CLI-first tooling, workflow composition, low-context tool usage, and human-in-the-loop operations.",
         ],
-      },
-      {
-        name: "Commercial Experiments",
-        title: "SaaS, Recruiting, Content and Automation",
-        meta: "Product / Sales / Delivery",
-        points: [
-          "Validated founder instincts through paid AI SaaS, car-rental SaaS + AI analytics, recruiting automation, AI content workflows, and persona/social experiments.",
-          "Focus: find real demand, reach decision makers, ship a working system, learn from usage, and turn the process into a repeatable business loop.",
-        ],
-      },
-    ],
-    thinking: [
-      {
-        label: "Commercial thinking",
-        body:
-          "I care whether a system can close deals, reduce labor cost, create a repeatable workflow, and turn delivery into a compounding asset.",
-      },
-      {
-        label: "Product thinking",
-        body:
-          "I translate messy user needs into product surfaces, feedback loops, evaluation criteria, and workflows that users can actually repeat.",
-      },
-      {
-        label: "Architecture thinking",
-        body:
-          "I separate runtime, tools, context, memory, retrieval, evaluation, and human approval so Agent products stay debuggable and extensible.",
-      },
-      {
-        label: "Organization thinking",
-        body:
-          "I see AI as part of the team operating system: humans set goals and judgment, agents execute, report, and improve the workflow.",
       },
     ],
     content: {
@@ -264,26 +226,27 @@ const copy = {
     },
   },
   zh: {
-    nav: ["经历", "系统", "思维", "联系"],
+    nav: ["Bilibili", "Apps", "工作", "技术栈", "联系"],
     switchLabel: "EN",
-    heroKicker: "AI Native Founder / Agent Systems Builder",
+    heroKicker: "AI Native Agent Systems Builder / Backend Engineer",
     name: "翁小雄",
     hero:
       "我擅长把模糊的商业机会抽象成可自动运行的 AI 系统：调研、内容、招聘、产品创新、开发、运营和增长，都可以变成 Agent 可调度、可评测、可复利的工作流。",
     ctas: ["邮件", "GitHub", "Bilibili"],
     ticker: ["商业", "产品", "架构", "Agent Runtime", "检索", "评测"],
     sections: {
-      work: "01 / Founder 经历",
-      systems: "02 / 商业系统",
-      thinking: "03 / Founder 思维",
-      content: "04 / 受众与影响力",
-      stack: "05 / Agent 技术栈",
+      content: "01 / 受众与影响力",
+      systems: "02 / Apps",
+      work: "03 / 工作经历",
+      stack: "04 / 技术栈",
       contact: "联系",
     },
     work: [
       {
         meta: "2024 - 至今 · 上海",
         title: "特赞 Tezign · AI Agent / Product Engineering",
+        link: "https://www.tezign.com/",
+        logo: "/logos/tezign.png",
         points: [
           "把企业调研、产品创新和内容工作流改造成可规划、可执行、可评测、可交付的 Agent 系统。",
           "围绕 Atypica.AI Research Agent 建立可复用商业流程：澄清市场问题、模拟消费者、收集信号、输出可决策报告。",
@@ -304,6 +267,8 @@ const copy = {
       {
         meta: "2023 - 2024 · 上海",
         title: "SenseTime 商汤科技 · LLM Application / Agent Intern",
+        link: "https://www.sensetime.com/en",
+        logo: "/logos/sensetime.png",
         points: ["探索 LLM 如何进入企业知识、工具调用、任务自动化和内部效率系统。"],
       },
     ],
@@ -342,17 +307,6 @@ const copy = {
         ],
       },
       {
-        name: "捏Ta",
-        title: "动漫风格图像生成工作流",
-        meta: "Stable Diffusion / LoRA / Personalization",
-        link: "https://app.nieta.art/",
-        logo: "/logos/nieta.ico",
-        points: [
-          "商业价值：把个性化动漫风格生成做成终端用户可使用的产品，而不只是模型 demo。",
-          "生成技术：定制化 Stable Diffusion 与 LoRA 工作流、可控个性化、风格预设和可复现的角色图片输出。",
-        ],
-      },
-      {
         name: "某奢侈品电商活动",
         title: "品牌活动 Commerce Agent",
         meta: "PostgreSQL / pgvector / JSONB / Prisma",
@@ -362,40 +316,14 @@ const copy = {
         ],
       },
       {
-        name: "Agent Tools / Skill CLI",
-        title: "面向 Agent 的开发者基础设施",
-        meta: "CLI / Skills / Workflow",
+        name: "Agent Tools & Automation",
+        title: "Agent 基础设施与商业自动化",
+        meta: "CLI / Skills / Workflow / Product Ops",
+        logo: "/logos/agent-tools.svg",
         points: [
-          "商业价值：帮助开发者把能力包装成 Agent 可用工具，降低复杂系统集成成本。",
-          "Agent 技术：Skill metadata、渐进式披露、CLI-first tooling、workflow composition 和低上下文工具调用。",
+          "商业价值：把 Agent 能力封装、SaaS 工作流、招聘自动化、AI 内容运营和交付方法沉淀为可复制业务闭环。",
+          "Agent 技术：Skill metadata、渐进式披露、CLI-first tooling、workflow composition、低上下文工具调用和 human-in-the-loop 运营。",
         ],
-      },
-      {
-        name: "商业化实验",
-        title: "SaaS、招聘、内容和自动化",
-        meta: "Product / Sales / Delivery",
-        points: [
-          "通过付费 AI SaaS、日本租车 SaaS + AI 分析、招聘自动化、AI 内容工作流、AI Persona 社交实验验证 founder 判断。",
-          "重点不是堆项目，而是找到真实需求、接近决策人、交付可用系统、从使用中学习，并把过程沉淀成可复制业务闭环。",
-        ],
-      },
-    ],
-    thinking: [
-      {
-        label: "商业思维",
-        body: "关注系统能不能成交、降低人力成本、形成可复制交付，并把一次项目沉淀成长期资产。",
-      },
-      {
-        label: "产品思维",
-        body: "把混乱需求翻译成产品界面、反馈循环、评测标准和用户可重复使用的工作流。",
-      },
-      {
-        label: "技术架构思维",
-        body: "拆分 runtime、tools、context、memory、retrieval、evaluation 和 human approval，让 Agent 产品可调试、可扩展。",
-      },
-      {
-        label: "组织系统思维",
-        body: "把 AI 当作团队操作系统的一部分：人类设定目标和判断，Agent 执行、汇报、复盘并优化流程。",
       },
     ],
     content: {
@@ -479,6 +407,39 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const panels = Array.from(document.querySelectorAll<HTMLElement>(".tilt3d"));
+
+    function onMove(event: PointerEvent) {
+      const target = event.currentTarget as HTMLElement;
+      const rect = target.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      target.style.setProperty("--tilt-x", `${(-y * 7).toFixed(2)}deg`);
+      target.style.setProperty("--tilt-y", `${(x * 7).toFixed(2)}deg`);
+      target.style.setProperty("--tilt-z", "18px");
+    }
+
+    function onLeave(event: PointerEvent) {
+      const target = event.currentTarget as HTMLElement;
+      target.style.setProperty("--tilt-x", "0deg");
+      target.style.setProperty("--tilt-y", "0deg");
+      target.style.setProperty("--tilt-z", "0px");
+    }
+
+    panels.forEach((panel) => {
+      panel.addEventListener("pointermove", onMove);
+      panel.addEventListener("pointerleave", onLeave);
+    });
+
+    return () => {
+      panels.forEach((panel) => {
+        panel.removeEventListener("pointermove", onMove);
+        panel.removeEventListener("pointerleave", onLeave);
+      });
+    };
+  }, [locale]);
+
+  useEffect(() => {
     const saved = window.localStorage.getItem("locale") as Locale | null;
     if (saved === "en" || saved === "zh") {
       setLocale(saved);
@@ -495,10 +456,11 @@ export default function Home() {
 
   const navTargets = useMemo(
     () => [
-      ["#work", t.nav[0]],
-      ["#systems", t.nav[1]],
-      ["#thinking", t.nav[2]],
-      ["#contact", t.nav[3]],
+      ["#bilibili", t.nav[0]],
+      ["#apps", t.nav[1]],
+      ["#work", t.nav[2]],
+      ["#stack", t.nav[3]],
+      ["#contact", t.nav[4]],
     ],
     [t.nav],
   );
@@ -552,86 +514,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section intro reveal" id="work">
-        <div className="sectionLabel">{t.sections.work}</div>
-        <div className="timeline">
-          {t.work.map((item) => {
-            const hasBrandLink = "link" in item && item.link && "logo" in item && item.logo;
-
-            return (
-              <article className="entry" key={item.title}>
-                <div className="entryMeta">{item.meta}</div>
-                <div className="entryHead">
-                  <h2>{item.title}</h2>
-                  {hasBrandLink ? (
-                    <a className="entryBrand" href={item.link} target="_blank" rel="noopener noreferrer">
-                      <img src={item.logo} alt={`${item.title} logo`} />
-                      <span>{locale === "en" ? "Open" : "打开"}</span>
-                    </a>
-                  ) : null}
-                </div>
-                <ul>
-                  {item.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="section projects reveal" id="systems">
-        <div className="sectionLabel">{t.sections.systems}</div>
-        <div className="projectGrid">
-          {t.systems.map((project, index) => {
-            const hasBrandLink = "link" in project && project.link && "logo" in project && project.logo;
-
-            return (
-              <article className="project" key={project.name} style={{ transitionDelay: `${index * 55}ms` }}>
-                <div className="projectTop">
-                  {hasBrandLink ? (
-                    <a className="projectBrand" href={project.link} target="_blank" rel="noopener noreferrer">
-                      <img src={project.logo} alt={`${project.name} logo`} />
-                      <span>{project.name}</span>
-                    </a>
-                  ) : (
-                    <span className="projectName">{project.name}</span>
-                  )}
-                  <span className="projectMetaText">{project.meta}</span>
-                </div>
-                <h2>{project.title}</h2>
-                <ul>
-                  {project.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-                {"link" in project && project.link ? (
-                  <a className="projectLink" href={project.link} target="_blank" rel="noopener noreferrer">
-                    {locale === "en" ? "Open link" : "打开链接"}
-                  </a>
-                ) : null}
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="section thinking" id="thinking">
-        <div className="sectionLabel">{t.sections.thinking}</div>
-        <div className="thinkingGrid">
-          {t.thinking.map((item, index) => (
-            <article className="thinkingCard reveal" key={item.label} style={{ transitionDelay: `${index * 70}ms` }}>
-              <h2>{item.label}</h2>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section contentProof reveal">
+      <section className="section contentProof reveal" id="bilibili">
         <div className="sectionLabel">{t.sections.content}</div>
-        <div className="biliShowcase">
+        <div className="biliShowcase tilt3d slide3d">
           <div className="biliIntro">
             <p className="entryMeta">{t.content.stats}</p>
             <h2>{t.content.title}</h2>
@@ -666,9 +551,82 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section skills reveal" aria-label="Stack">
+      <section className="section projects reveal" id="apps">
+        <div className="sectionLabel">{t.sections.systems}</div>
+        <div className="projectGrid">
+          {t.systems.map((project, index) => {
+            const hasLogo = "logo" in project && project.logo;
+            const hasLink = "link" in project && project.link;
+
+            return (
+              <article className="project tilt3d slide3d" key={project.name} style={{ transitionDelay: `${index * 55}ms` }}>
+                <div className="projectTop">
+                  {hasLogo ? (
+                    hasLink ? (
+                      <a className="projectBrand" href={project.link} target="_blank" rel="noopener noreferrer">
+                        <img src={project.logo} alt={`${project.name} logo`} />
+                        <span>{project.name}</span>
+                      </a>
+                    ) : (
+                      <div className="projectBrand projectBrandStatic">
+                        <img src={project.logo} alt={`${project.name} icon`} />
+                        <span>{project.name}</span>
+                      </div>
+                    )
+                  ) : (
+                    <span className="projectName">{project.name}</span>
+                  )}
+                  <span className="projectMetaText">{project.meta}</span>
+                </div>
+                <h2>{project.title}</h2>
+                <ul>
+                  {project.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+                {hasLink ? (
+                  <a className="projectLink" href={project.link} target="_blank" rel="noopener noreferrer">
+                    {locale === "en" ? "Open link" : "打开链接"}
+                  </a>
+                ) : null}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section intro reveal" id="work">
+        <div className="sectionLabel">{t.sections.work}</div>
+        <div className="timeline tilt3d slide3d">
+          {t.work.map((item) => {
+            const hasBrandLink = "link" in item && item.link && "logo" in item && item.logo;
+
+            return (
+              <article className="entry" key={item.title}>
+                <div className="entryMeta">{item.meta}</div>
+                <div className="entryHead">
+                  <h2>{item.title}</h2>
+                  {hasBrandLink ? (
+                    <a className="entryBrand" href={item.link} target="_blank" rel="noopener noreferrer">
+                      <img src={item.logo} alt={`${item.title} logo`} />
+                      <span>{locale === "en" ? "Open" : "打开"}</span>
+                    </a>
+                  ) : null}
+                </div>
+                <ul>
+                  {item.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section skills reveal" id="stack" aria-label="Stack">
         <div className="sectionLabel">{t.sections.stack}</div>
-        <div className="skillList">
+        <div className="skillList tilt3d slide3d">
           {t.stack.map(([label, value]) => (
             <div className="skillRow" key={label}>
               <span>{label}</span>
@@ -678,7 +636,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contactSection reveal" id="contact">
+      <section className="contactSection reveal tilt3d slide3d" id="contact">
         <div>
           <p className="eyebrow">{t.sections.contact}</p>
           <h2>{t.contact.title}</h2>
